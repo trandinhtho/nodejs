@@ -6,7 +6,7 @@ function GenID(length) {
   var result = "";
   var source = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiklmnopqrstuvwxyz0123456789"
   for (let index = 0; index < length; index++) {
-    var random = Math.round(Math.random() * source.length);
+    var random = Math.floor(Math.random() * source.length);
     result += source[random];
   }
   return result;
