@@ -1,11 +1,21 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
+// Định tuyến cho các yêu cầu đến '/product'
+router.use('/product', require('./product'));
 
+// Định tuyến cho các yêu cầu đến '/category'
+router.use('/category', require('./category'));
+
+// Định tuyến cho các yêu cầu đến '/users'
 router.use('/users', require('./users'));
-//hostname:port/api/v1/books
-router.use('/api/v1/books', require('./books'));
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
+
+// Định tuyến cho các yêu cầu đến '/cart'
+router.use('/cart', require('./cart'));
+
+// Định tuyến cho các yêu cầu đến '/order'
+router.use('/order', require('./order'));
+
+// Bạn có thể thêm các định tuyến khác ở đây nếu cần
+
 module.exports = router;
